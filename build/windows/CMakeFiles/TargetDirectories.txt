@@ -1,0 +1,10 @@
+D:/proyek4/pollearn/build/windows/CMakeFiles/INSTALL.dir
+D:/proyek4/pollearn/build/windows/CMakeFiles/ALL_BUILD.dir
+D:/proyek4/pollearn/build/windows/CMakeFiles/ZERO_CHECK.dir
+D:/proyek4/pollearn/build/windows/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+D:/proyek4/pollearn/build/windows/flutter/CMakeFiles/flutter_wrapper_app.dir
+D:/proyek4/pollearn/build/windows/flutter/CMakeFiles/flutter_assemble.dir
+D:/proyek4/pollearn/build/windows/flutter/CMakeFiles/INSTALL.dir
+D:/proyek4/pollearn/build/windows/runner/CMakeFiles/pollearn.dir
+D:/proyek4/pollearn/build/windows/runner/CMakeFiles/INSTALL.dir
+D:/proyek4/pollearn/build/windows/runner/CMakeFiles/ALL_BUILD.dir

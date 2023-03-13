@@ -1,0 +1,28 @@
+^D:\PROYEK4\POLLEARN\BUILD\WINDOWS\CMAKEFILES\FF036BCB832296C2C88D39DE246B16DC\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=D:\Pollearn\flutter PROJECT_DIR=D:\proyek4\pollearn FLUTTER_ROOT=D:\Pollearn\flutter FLUTTER_EPHEMERAL_DIR=D:\proyek4\pollearn\windows\flutter\ephemeral PROJECT_DIR=D:\proyek4\pollearn FLUTTER_TARGET=D:\proyek4\pollearn\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\proyek4\pollearn\.dart_tool\package_config.json D:/Pollearn/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROYEK4\POLLEARN\BUILD\WINDOWS\CMAKEFILES\0C587F629DE25A32005F3719EC5FF949\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROYEK4\POLLEARN\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/proyek4/pollearn/windows -BD:/proyek4/pollearn/build/windows --check-stamp-file D:/proyek4/pollearn/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
