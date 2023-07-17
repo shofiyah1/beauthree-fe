@@ -10,7 +10,6 @@ class AddClassPage extends StatefulWidget {
   @override
   State<AddClassPage> createState() => _AddClassPageState();
 }
-
 class _AddClassPageState extends State<AddClassPage> {
   @override
   Widget build(BuildContext context) {
