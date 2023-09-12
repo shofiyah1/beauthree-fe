@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:pollearn/pages/addclass.dart';
@@ -5,7 +6,7 @@ import 'package:pollearn/pages/dashboard.dart';
 import 'package:pollearn/pages/detailClass.dart';
 import 'package:pollearn/pages/task.dart';
 import 'package:pollearn/pages/dashboard.dart';
-
+import 'package:http/http.dart' as http;
 
 class Kelas extends StatefulWidget {
   const Kelas({Key? key}) : super(key: key);
@@ -15,10 +16,31 @@ class Kelas extends StatefulWidget {
 }
 
 class _KelasState extends State<Kelas> {
-  List courses = [
-    '2A - Statistika dan Probabilitas',
-    '1A - Matematika Diskrit',
-  ];
+  List<Map<String, dynamic>> courses = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchKelas();
+  }
+
+  Future<void> fetchKelas() async {
+    final response =
+        await http.get(Uri.parse('http://127.0.0.1:8000/api/kelas/'));
+
+    if (response.statusCode == 200) {
+      setState(() {
+        courses = (jsonDecode(response.body) as List<dynamic>)
+            .map((dynamic item) => {
+                  'jenis_kelas': item['jenis_kelas'],
+                  'nama_kelas': item['nama_kelas'],
+                })
+            .toList();
+      });
+    } else {
+      throw Exception('Failed to load data');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,14 +129,15 @@ class _KelasState extends State<Kelas> {
                                             .image,
                                       ),
                                       title: Text(
-                                        courses[index],
+                                        courses[index]['nama_kelas'],
                                         style: TextStyle(
                                             color:
                                                 Theme.of(context).primaryColor,
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      subtitle: Text('Praktikum',
+                                      subtitle: Text(
+                                          courses[index]['jenis_kelas'],
                                           style: TextStyle(
                                               color: Colors.grey,
                                               fontSize: 12,
@@ -206,8 +229,8 @@ class _KelasState extends State<Kelas> {
               break;
             case 2:
               // Handle Home tap
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => DashboardPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DashboardPage()));
               break;
             case 3:
               // Handle Task tap
